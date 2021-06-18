@@ -3,15 +3,12 @@ package com.developers.ecommerceapp.ekart.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.circuitbreaker.CircuitBreaker;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ObjectUtils;
 
 import com.developers.ecommerceapp.ekart.dao.CustomerEntity;
 import com.developers.ecommerceapp.ekart.dao.Order;
 import com.developers.ecommerceapp.ekart.dao.OrderItem;
-import com.developers.ecommerceapp.ekart.exceptions.CartItemNotExistException;
 import com.developers.ecommerceapp.ekart.feign.FeignFund;
 import com.developers.ecommerceapp.ekart.model.CartDto;
 import com.developers.ecommerceapp.ekart.model.CartItemDto;
@@ -45,7 +42,7 @@ public class OrderService {
 
 		CustomerEntity cust = custRepo.findByCustId(cust_Id);
         CartDto cartDto = cartService.listCartItems(cust);
-        CircuitBreaker circuitBreaker=circuitBreakerFactory.create("fundTransfer");
+        //CircuitBreaker circuitBreaker=circuitBreakerFactory.create("fundTransfer");
 
         PlaceOrderDto placeOrderDto = new PlaceOrderDto();
         placeOrderDto.setUser(cust);

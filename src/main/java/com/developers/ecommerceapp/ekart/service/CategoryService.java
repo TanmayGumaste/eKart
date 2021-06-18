@@ -35,10 +35,12 @@ public class CategoryService {
 	}
 
 	public Category readCategory(String categoryName) {
+		logger.info("CategoryService : readcategorybyName : Start");
 		return categoryrepository.findByCategoryName(categoryName);
 	}
 
 	public Optional<Category> readCategory(Integer categoryId) {
+		logger.info("CategoryService : readcategoryById: Start");
 		return categoryrepository.findById(categoryId);
 	}
 

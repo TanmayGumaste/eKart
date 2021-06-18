@@ -29,12 +29,12 @@ public class ProductService {
         return productDtos;
     }
 
-    public static ProductDto getDtoFromProduct(Product product) {
+    private ProductDto getDtoFromProduct(Product product) {
         ProductDto productDto = new ProductDto(product);
         return productDto;
     }
 
-    public static Product getProductFromDto(ProductDto productDto, Category category) {
+    private Product getProductFromDto(ProductDto productDto, Category category) {
         Product product = new Product(productDto, category);
         return product;
     }

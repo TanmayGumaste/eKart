@@ -35,7 +35,7 @@ public class CartService {
 
     public void addToCart(AddToCartDto addToCartDto, Product product, CustomerEntity customer){
         Cart cart = new Cart(product, addToCartDto.getQuantity(), customer);
-        List<Cart> cartList = cartRepository.findAllByCustomerOrderByCreatedDateDesc(customer);
+        //List<Cart> cartList = cartRepository.findAllByCustomerOrderByCreatedDateDesc(customer);
 //        Optional<Cart> cartOp = cartList.stream().filter(i-> i.getProduct().getId()==product.getId()).findAny();
 //        Optional<Cart> cartop1 = product.getCarts().stream().filter(j->j.getId()==cartOp.get().getId()).findAny();
         
